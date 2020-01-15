@@ -1,0 +1,175 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.todos {
+  height: 100%;
+}
+
+.todos__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.todo-card {
+  padding: 60px 20px;
+  max-width: 300px;
+  width: 100%;
+  color: #000;
+  -webkit-box-shadow: 3px 3px 5px 5px #000;
+          box-shadow: 3px 3px 5px 5px #000;
+  background: #fff;
+}
+
+.todo-card__title {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.todo-card__form {
+  padding-top: 20px;
+}
+
+.todo-card__container {
+  padding-top: 20px;
+}
+
+.todo-card__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #fff;
+}
+
+.todo-card__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 2px;
+  background: #000;
+}
+
+.todo-card__item:last-child {
+  margin-bottom: 0;
+}
+
+.todo-card__text {
+  margin: 0;
+  padding-right: 15px;
+}
+
+.todo-card__btn {
+  width: 26px;
+  height: 26px;
+  font-size: 26px;
+  line-height: 1;
+  color: transparent;
+  border: 0;
+  background: url("../images/close_fat.svg") no-repeat center/16px;
+}
+
+.todo-card__footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.todo-card__clear {
+  padding-bottom: 20px;
+  font: inherit;
+  border: 0;
+  background: url("../images/delete.svg") no-repeat center bottom/16px;
+}
+
+.todo-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo-form__btn {
+  padding: 3px;
+  font-size: 30px;
+  line-height: 1;
+  border: 0;
+}
+
+.todo-form__btn:focus {
+  outline: none;
+}
+
+.todo-form__input {
+  margin-left: 20px;
+  padding: 5px 5px 10px 5px;
+  min-width: 200px;
+  max-width: 100%;
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
+
+.todo-form__input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.todo-form__input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+.todo-form__input::-ms-input-placeholder {
+  color: #ccc;
+}
+
+.todo-form__input::placeholder {
+  color: #ccc;
+}
+
+.todo-form__input:focus {
+  outline: none;
+}
+/*# sourceMappingURL=main.css.map */

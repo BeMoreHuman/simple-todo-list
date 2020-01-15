@@ -1,0 +1,107 @@
+@import './base';
+
+body {
+  // background: #000;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.todos {
+  height: 100%;
+  &__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+.todo-card {
+  padding: 60px 20px;
+  max-width: 300px;
+  width: 100%;
+  color: #000;
+  box-shadow: 3px 3px 5px 5px #000;
+  background: #fff;
+  &__title {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  &__form {
+    padding-top: 20px;
+  }
+  &__container {
+    padding-top: 20px;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #fff;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 2px;
+    background: #000;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__text {
+    margin: 0;
+    padding-right: 15px;
+  }
+  &__btn {
+    width: 26px;
+    height: 26px;
+    font-size: 26px;
+    line-height: 1;
+    color: transparent;
+    border: 0;
+    background: url('../images/close_fat.svg') no-repeat center / 16px;
+  }
+  &__footer {
+    padding-top: 20px;
+    text-align: center;
+  }
+  &__clear {
+    padding-bottom: 20px;
+    font: inherit;
+    border: 0;
+    background: url('../images/delete.svg') no-repeat center bottom / 16px;
+  }
+}
+
+.todo-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__btn {
+    padding: 3px;
+    font-size: 30px;
+    line-height: 1;
+    border: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__input {
+    margin-left: 20px;
+    padding: 5px 5px 10px 5px;
+    min-width: 200px;
+    max-width: 100%;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #000;
+    &::placeholder {
+      color: #ccc;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
