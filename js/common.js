@@ -18,12 +18,28 @@
     p.classList.add('todo-card__text');
     btn.classList.add('todo-card__btn');
     p.textContent = taskName;
+    btn.textContent = '+';
     li.appendChild(p);
     li.appendChild(btn);
 
     return li;
   }
 
-  createTask(2);
-})();
+  /**
+   * 
+   * @param {HTMLLIElement} taskItem - new task element
+   */
+  function updateTaskList(taskItem) {
+    taskList.prepend(taskItem);
+  }
 
+  addTaskBtn.addEventListener('click', () => {
+    
+    const task = addTaskInput.value.trim();
+    const newTask = createTask(task);
+
+    updateTaskList(newTask);
+    // clear task input
+    addTaskInput.value = '';
+  });
+})();
