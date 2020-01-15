@@ -15,6 +15,14 @@ body {
   }
 }
 
+.preloader {
+  &__img {
+    width: 200px;
+    height: 200px;
+    background: url('../images/preloader.svg') no-repeat center / contain;
+  }
+}
+
 .todo-card {
   padding: 60px 20px;
   max-width: 300px;
@@ -37,6 +45,8 @@ body {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    max-height: 250px;
+    overflow-y: auto;
     color: #fff;
   }
   &__item {
@@ -47,13 +57,37 @@ body {
     padding: 10px;
     border-radius: 2px;
     background: #000;
+    animation: showIn .5s ease forwards;
     &:last-child {
       margin-bottom: 0;
     }
+    &--done {
+      .todo-card__text {
+        color: rgba(255, 255, 255, .6);
+        &:before {
+          width: calc(100% + 10px);
+        }
+      }
+      .todo-card__btn {
+        background-image: url('../images/done.svg');
+      }
+    }
   }
   &__text {
+    position: relative;
     margin: 0;
     padding-right: 15px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -5px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width .3s ease;
+    }
   }
   &__btn {
     width: 26px;
@@ -63,6 +97,10 @@ body {
     color: transparent;
     border: 0;
     background: url('../images/close_fat.svg') no-repeat center / 16px;
+    transition: all .3s ease;
+    &:focus {
+      outline: none;
+    }
   }
   &__footer {
     padding-top: 20px;
@@ -73,6 +111,9 @@ body {
     font: inherit;
     border: 0;
     background: url('../images/delete.svg') no-repeat center bottom / 16px;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -103,5 +144,19 @@ body {
     &:focus {
       outline: none;
     }
+  }
+}
+
+@keyframes showIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: .3;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
   }
 }

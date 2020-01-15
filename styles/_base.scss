@@ -15,6 +15,27 @@ button {
   cursor: pointer;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+// Custom scrollbar
+// width
+::-webkit-scrollbar {
+  width: 6px;
+}
+// Track
+::-webkit-scrollbar-track {
+
+}
+// Handle
+::-webkit-scrollbar-thumb {
+  background: #201c2b;
+  border-radius: 10px;
+  border: 1px solid #47525d;
+}
+// Handle on hover
+::-webkit-scrollbar-thumb:hover {
+  background: #47525d;
 }

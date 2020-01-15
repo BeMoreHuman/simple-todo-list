@@ -4,6 +4,13 @@
   const taskList = document.body.querySelector('.todo-card__list');
   const taskRemoveBtn = document.body.querySelector('.todo-card__btn');
   const clearTasksBtn = document.body.querySelector('.todo-card__clear');
+  const doneTaskBtns = document.body.querySelectorAll('.todo-card__btn');
+
+  taskList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('todo-card__btn')) {
+      event.target.parentElement.classList.toggle('todo-card__item--done');
+    }
+  });
 
   /**
    * Create task
@@ -41,5 +48,9 @@
     updateTaskList(newTask);
     // clear task input
     addTaskInput.value = '';
+  });
+
+  clearTasksBtn.addEventListener('click', () => {
+    taskList.innerHTML = '';
   });
 })();

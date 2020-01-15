@@ -13,7 +13,15 @@
 
   <main class="todos">
     <section class="todos__section">
-      <div class="todo-card">
+      <!-- Preloader -->
+      <div class="todos__preloader">
+        <div class="preloader">
+          <div class="preloader__img">
+          </div>
+        </div>
+      </div>
+      <!-- Todos -->
+      <div style="display: none;" class="todo-card">
         <h1 class="todo-card__title">ToDo list</h1>
         <form class="todo-card__form todo-form">
           <button type="button" class="todo-form__btn">+</button>
@@ -25,7 +33,7 @@
               <p class="todo-card__text">task one</p>
               <button class="todo-card__btn">+</button>
             </li>
-            <li class="todo-card__item">
+            <li class="todo-card__item todo-card__item--done">
               <p class="todo-card__text">task two</p>
               <button class="todo-card__btn">+</button>
             </li>

@@ -16,9 +16,25 @@ button {
   cursor: pointer;
 }
 
-* {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #201c2b;
+  border-radius: 10px;
+  border: 1px solid #47525d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #47525d;
 }
 
 body {
@@ -40,6 +56,12 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+}
+
+.preloader__img {
+  width: 200px;
+  height: 200px;
+  background: url("../images/preloader.svg") no-repeat center/contain;
 }
 
 .todo-card {
@@ -70,6 +92,8 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  max-height: 250px;
+  overflow-y: auto;
   color: #fff;
 }
 
@@ -87,15 +111,44 @@ body {
   padding: 10px;
   border-radius: 2px;
   background: #000;
+  -webkit-animation: showIn .5s ease forwards;
+          animation: showIn .5s ease forwards;
 }
 
 .todo-card__item:last-child {
   margin-bottom: 0;
 }
 
+.todo-card__item--done .todo-card__text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.todo-card__item--done .todo-card__text:before {
+  width: calc(100% + 10px);
+}
+
+.todo-card__item--done .todo-card__btn {
+  background-image: url("../images/done.svg");
+}
+
 .todo-card__text {
+  position: relative;
   margin: 0;
   padding-right: 15px;
+}
+
+.todo-card__text:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
 }
 
 .todo-card__btn {
@@ -106,6 +159,12 @@ body {
   color: transparent;
   border: 0;
   background: url("../images/close_fat.svg") no-repeat center/16px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.todo-card__btn:focus {
+  outline: none;
 }
 
 .todo-card__footer {
@@ -118,6 +177,10 @@ body {
   font: inherit;
   border: 0;
   background: url("../images/delete.svg") no-repeat center bottom/16px;
+}
+
+.todo-card__clear:focus {
+  outline: none;
 }
 
 .todo-form {
@@ -171,5 +234,33 @@ body {
 
 .todo-form__input:focus {
   outline: none;
+}
+
+@-webkit-keyframes showIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: .3;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes showIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: .3;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=main.css.map */
